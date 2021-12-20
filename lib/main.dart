@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yapilacaklar_listesi/db/db_provider.dart';
 import './model/task_model.dart';
+import 'package:yapilacaklar_listesi/navigation.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,8 +11,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyTodoApp(),
-    );
+        theme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: Colors.black12,
+        ),
+        debugShowCheckedModeBanner: false,
+        home: NavigationAppBar());
   }
 }
 
@@ -23,10 +27,10 @@ class MyTodoApp extends StatefulWidget {
 }
 
 class _MyTodoAppState extends State<MyTodoApp> {
-  Color mainColor = Color(0xFF0D0952);
-  Color secondColor = Color(0xFF212061);
-  Color btnColor = Color(0xFFFF955B);
-  Color editorColor = Color(0xFF4044CC);
+  Color mainColor = Colors.white;
+  Color secondColor = Colors.white;
+  Color btnColor = Colors.deepPurple.shade200;
+  Color editorColor = Colors.deepPurple.shade400;
 
   TextEditingController inputController = TextEditingController();
   String newTaskTxt = "";
@@ -50,17 +54,17 @@ class _MyTodoAppState extends State<MyTodoApp> {
               child: TextButton.icon(
                 icon: Icon(
                   Icons.delete,
-                  color: Colors.black,
+                  color: Colors.deepPurple.shade200,
                 ),
                 onPressed: () {
                   DBProvider.db.clear();
                   setState(() {});
                 },
                 label:
-                    Text('Delete All', style: TextStyle(color: Colors.black)),
+                    Text('Delete All', style: TextStyle(color: Colors.white)),
                 style: TextButton.styleFrom(
                     shape: StadiumBorder(),
-                    backgroundColor: Colors.white,
+                    backgroundColor: Colors.deepPurple,
                     padding: EdgeInsets.fromLTRB(10, 0, 10, 0)),
               ))
         ],
@@ -92,7 +96,7 @@ class _MyTodoAppState extends State<MyTodoApp> {
                                     .day
                                     .toString();
                                 return Card(
-                                    color: Colors.amberAccent,
+                                    color: Colors.deepPurple.shade100,
                                     child: InkWell(
                                         child: Row(children: [
                                       Container(
@@ -100,7 +104,7 @@ class _MyTodoAppState extends State<MyTodoApp> {
                                         padding: EdgeInsets.all(12.0),
                                         child: Text(day),
                                         decoration: BoxDecoration(
-                                            color: Colors.red,
+                                            color: Colors.deepPurple.shade100,
                                             borderRadius: BorderRadius.all(
                                                 Radius.circular(2.0))),
                                       ),
