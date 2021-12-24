@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:yapilacaklar_listesi/hes_gallery/galleryPage.dart';
 import 'package:yapilacaklar_listesi/main.dart';
 export 'package:yapilacaklar_listesi/navigation.dart';
 import 'package:yapilacaklar_listesi/theming/ThemeModel.dart';
+import 'package:yapilacaklar_listesi/hes_gallery/galleryPage.dart';
 
 class NavigationAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -48,10 +50,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Consumer(builder: (context, ThemeModel themeNotifier, child) {
-      //imagesVisible = themeNotifier;
+      imagesVisible = themeNotifier;
       return Scaffold(
           appBar: _buildAppBar(themeNotifier),
-          body: MyTodoApp(),
+          body: GalleryPage(),
+          //body: MyTodoApp(),
           drawer: _buildDrawer(context));
     });
   }
