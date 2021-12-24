@@ -1,17 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:yapilacaklar_listesi/main.dart';
 export 'package:yapilacaklar_listesi/navigation.dart';
+import 'package:yapilacaklar_listesi/theming/ThemeModel.dart';
 
 class NavigationAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(100);
 
-  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    /*return MaterialApp(
+
         theme: ThemeData.light(),
         debugShowCheckedModeBanner: false,
-        home: MyHomePage());
+        home: MyHomePage());*/
+
+    return ChangeNotifierProvider(
+      create: (_) => ThemeModel(),
+      child: Consumer(builder: (context, ThemeModel themeNotifier, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          theme: themeNotifier.isDark ? ThemeData.dark() : ThemeData.light(),
+          home: const MyHomePage(title: 'Flutter Demo Home Page'),
+        );
+      }),
+    );
   }
 }
 
@@ -27,16 +41,19 @@ class MyHomePage extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var imagesVisible = true;
+  var imagesVisible;
 
   var cardContent = [];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: _buildAppBar(),
-        body: MyTodoApp(),
-        drawer: _buildDrawer(context));
+    return Consumer(builder: (context, ThemeModel themeNotifier, child) {
+      //imagesVisible = themeNotifier;
+      return Scaffold(
+          appBar: _buildAppBar(themeNotifier),
+          body: MyTodoApp(),
+          drawer: _buildDrawer(context));
+    });
   }
 
   Drawer _buildDrawer(BuildContext context) {
@@ -134,20 +151,22 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  AppBar _buildAppBar() {
+  AppBar _buildAppBar(ThemeModel themeNotifier) {
     return AppBar(
         backgroundColor: Colors.deepPurple,
         title: Text(widget.title),
         actions: [
           Switch(
-            value: imagesVisible,
-            activeColor: Colors.yellowAccent,
-            onChanged: (bool switchState) {
-              setState(() {
-                imagesVisible = switchState;
-              });
-            },
-          ),
+              value: imagesVisible.isDark,
+              activeColor: Colors.yellowAccent,
+              onChanged: (bool switchState) {
+                setState(() {
+                  /*switchState
+                      ? themeNotifier.isDark = false
+                      : themeNotifier.isDark = true;  */
+                  themeNotifier.isDark = switchState;
+                });
+              })
         ]);
   }
 
