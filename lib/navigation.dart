@@ -46,15 +46,15 @@ class _MyHomePageState extends State<MyHomePage> {
   var imagesVisible;
 
   var cardContent = [];
-
+  Widget stateNav = MyTodoApp();
   @override
   Widget build(BuildContext context) {
     return Consumer(builder: (context, ThemeModel themeNotifier, child) {
       imagesVisible = themeNotifier;
       return Scaffold(
           appBar: _buildAppBar(themeNotifier),
-          body: GalleryPage(),
-          //body: MyTodoApp(),
+          //body: GalleryPage(),
+          body: stateNav,
           drawer: _buildDrawer(context));
     });
   }
@@ -84,14 +84,9 @@ class _MyHomePageState extends State<MyHomePage> {
               style: TextStyle(fontSize: 24.0),
             ),
             onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute<void>(
-                  builder: (BuildContext context) => const MyHomePage(
-                    title: 'Hes Kodlarım',
-                  ),
-                ),
-              );
+              setState(() {
+                stateNav = MyTodoApp();
+              });
             },
           ),
           ListTile(
@@ -118,14 +113,13 @@ class _MyHomePageState extends State<MyHomePage> {
               style: TextStyle(fontSize: 24.0),
             ),
             onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute<void>(
-                  builder: (BuildContext context) => const MyHomePage(
-                    title: 'Hes',
-                  ),
-                ),
-              );
+              setState(() {
+                stateNav = GalleryPage();
+              });
+              // Navigator.pushReplacement(
+              //     context,
+              //     MaterialPageRoute<void>(
+              //         builder: (BuildContext context) => stateNav));
             },
           ),
           const Divider(
