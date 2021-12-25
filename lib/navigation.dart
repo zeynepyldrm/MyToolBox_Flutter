@@ -59,6 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+//navigator düzeni
   Drawer _buildDrawer(BuildContext context) {
     return Drawer(
       child: ListView(
@@ -67,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
           const UserAccountsDrawerHeader(
             currentAccountPicture: CircleAvatar(
               backgroundImage: NetworkImage(
-                  'https://avatars.githubusercontent.com/u/26030027?v=4'),
+                  'https://avatars.githubusercontent.com/u/26030027?v=4'), //resim alanaı -zeynep resmi
             ),
             accountEmail: Text('deneme@example.com'),
             accountName: Text(
@@ -116,6 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
               setState(() {
                 stateNav = GalleryPage();
               });
+
               // Navigator.pushReplacement(
               //     context,
               //     MaterialPageRoute<void>(
@@ -126,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 10,
             thickness: 1,
           ),
-          ListTile(
+          /* ListTile(
             leading: const Icon(Icons.favorite),
             title: const Text(
               'Ayarlar',
@@ -143,11 +145,13 @@ class _MyHomePageState extends State<MyHomePage> {
               );
             },
           ),
+          */
         ],
       ),
     );
   }
 
+  //butona göre ekranın temasını ayarlama kısmı appabardaki switch kontrolu
   AppBar _buildAppBar(ThemeModel themeNotifier) {
     return AppBar(
         backgroundColor: Colors.deepPurple,

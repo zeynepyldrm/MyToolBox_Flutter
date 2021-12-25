@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+//to do list başlangıç
 class MyTodoApp extends StatefulWidget {
   const MyTodoApp({Key? key}) : super(key: key);
 
@@ -38,6 +39,7 @@ class _MyTodoAppState extends State<MyTodoApp> {
   TextEditingController inputController = TextEditingController();
   String newTaskTxt = "";
 
+//db den alma to do ları
   getTasks() async {
     return await DBProvider.db.getAllTasks();
   }

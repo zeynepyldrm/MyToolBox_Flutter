@@ -17,9 +17,17 @@ class GalleryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer(builder: (context, ThemeModel themeNotifier, child) {
       Color bcColor =
-          themeNotifier.isDark ? Colors.white : Colors.grey.shade700;
+          themeNotifier.isDark ? Colors.grey.shade700 : Colors.white;
       return Scaffold(
-        backgroundColor: Colors.green,
+        //backgroundColor: Colors.green,
+        appBar: AppBar(
+            backgroundColor: bcColor,
+            title: Text(
+              'Hes Kodları Galeri',
+              style: TextStyle(
+                color: Colors.deepPurple,
+              ),
+            )),
         body: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
