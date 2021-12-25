@@ -68,7 +68,7 @@ class _MyTodoAppState extends State<MyTodoApp> {
                     setState(() {});
                   },
                   label:
-                      Text('Delete All', style: TextStyle(color: Colors.white)),
+                      Text('Tümünü Sil', style: TextStyle(color: Colors.white)),
                   style: TextButton.styleFrom(
                       shape: StadiumBorder(),
                       backgroundColor: Colors.deepPurple,
@@ -122,7 +122,7 @@ class _MyTodoAppState extends State<MyTodoApp> {
                         }
                       }
                   }
-                  return Center(child: Text('You have no Task today'));
+                  return Center(child: Text('Bugün sepetine ekleme yapmadın.'));
                 },
               ),
             ),
@@ -139,7 +139,7 @@ class _MyTodoAppState extends State<MyTodoApp> {
                       decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
-                          hintText: "Type a new Task"),
+                          hintText: "Listene yeni ürün ekle"),
                       controller: inputController,
                     ),
                   ),
@@ -160,8 +160,8 @@ class _MyTodoAppState extends State<MyTodoApp> {
                           Task(task: newTaskTxt, dateTime: DateTime.now());
                       DBProvider.db.addNewTask(newTask);
                     },
-                    label:
-                        Text('Add Task', style: TextStyle(color: Colors.white)),
+                    label: Text('Ürün Ekle',
+                        style: TextStyle(color: Colors.white)),
                     style: TextButton.styleFrom(
                         shape: StadiumBorder(),
                         backgroundColor: btnColor,

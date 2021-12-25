@@ -17,9 +17,9 @@ class NavigationAppBar extends StatelessWidget implements PreferredSizeWidget {
       child: Consumer(builder: (context, ThemeModel themeNotifier, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Demo',
+          title: '',
           theme: themeNotifier.isDark ? ThemeData.dark() : ThemeData.light(),
-          home: const MyHomePage(title: 'Flutter Demo Home Page'),
+          home: const MyHomePage(title: 'Kişisel Alet Çantam'),
         );
       }),
     );
@@ -31,7 +31,7 @@ class MyHomePage extends StatefulWidget implements PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(100);
   final String title;
 
-  const MyHomePage({this.title = 'App'});
+  const MyHomePage({this.title = ''});
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
