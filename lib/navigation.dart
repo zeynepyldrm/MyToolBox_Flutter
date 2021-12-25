@@ -5,18 +5,13 @@ import 'package:yapilacaklar_listesi/main.dart';
 export 'package:yapilacaklar_listesi/navigation.dart';
 import 'package:yapilacaklar_listesi/theming/ThemeModel.dart';
 import 'package:yapilacaklar_listesi/compass/Compass.dart';
+import 'package:yapilacaklar_listesi/calculator/calculator.dart';
 
 class NavigationAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(100);
 
   Widget build(BuildContext context) {
-    /*return MaterialApp(
-
-        theme: ThemeData.light(),
-        debugShowCheckedModeBanner: false,
-        home: MyHomePage());*/
-
     return ChangeNotifierProvider(
       create: (_) => ThemeModel(),
       child: Consumer(builder: (context, ThemeModel themeNotifier, child) {
@@ -101,11 +96,6 @@ class _MyHomePageState extends State<MyHomePage> {
               setState(() {
                 stateNav = GalleryPage();
               });
-
-              // Navigator.pushReplacement(
-              //     context,
-              //     MaterialPageRoute<void>(
-              //         builder: (BuildContext context) => stateNav));
             },
           ),
           ListTile(
@@ -124,24 +114,18 @@ class _MyHomePageState extends State<MyHomePage> {
             height: 10,
             thickness: 1,
           ),
-          /* ListTile(
+          ListTile(
             leading: const Icon(Icons.favorite),
             title: const Text(
-              'Ayarlar',
+              'Hesap Makinesi',
               style: TextStyle(fontSize: 24.0),
             ),
             onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute<void>(
-                  builder: (BuildContext context) => const MyHomePage(
-                    title: 'Favorites',
-                  ),
-                ),
-              );
+              setState(() {
+                stateNav = CalculatorPage();
+              });
             },
           ),
-          */
         ],
       ),
     );

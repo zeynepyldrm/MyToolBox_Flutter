@@ -54,7 +54,7 @@ class _MyTodoAppState extends State<MyTodoApp> {
         appBar: AppBar(
           elevation: 0.0,
           backgroundColor: bcColor,
-          title: Text('Yapılacaklar'),
+          title: Text('Alışveriş Sepetim'),
           actions: [
             Padding(
                 padding: EdgeInsets.all(8.0),
