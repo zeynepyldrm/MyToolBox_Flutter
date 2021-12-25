@@ -4,7 +4,7 @@ import 'package:yapilacaklar_listesi/hes_gallery/galleryPage.dart';
 import 'package:yapilacaklar_listesi/main.dart';
 export 'package:yapilacaklar_listesi/navigation.dart';
 import 'package:yapilacaklar_listesi/theming/ThemeModel.dart';
-import 'package:yapilacaklar_listesi/hes_gallery/galleryPage.dart';
+import 'package:yapilacaklar_listesi/compass/Compass.dart';
 
 class NavigationAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
               backgroundImage: NetworkImage(
                   'https://avatars.githubusercontent.com/u/26030027?v=4'), //resim alanaı -zeynep resmi
             ),
-            accountEmail: Text('deneme@example.com'),
+            accountEmail: Text('zeynep@example.com'),
             accountName: Text(
               'Zeynep ',
               style: TextStyle(fontSize: 23.0),
@@ -90,23 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
               });
             },
           ),
-          ListTile(
-            leading: const Icon(Icons.apartment),
-            title: const Text(
-              'Düzenlemeler',
-              style: TextStyle(fontSize: 24.0),
-            ),
-            onTap: () {
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute<void>(
-                  builder: (BuildContext context) => const MyHomePage(
-                    title: 'Apartments',
-                  ),
-                ),
-              );
-            },
-          ),
+          //hes kod
           ListTile(
             leading: const Icon(Icons.house_outlined),
             title: const Text(
@@ -122,6 +106,18 @@ class _MyHomePageState extends State<MyHomePage> {
               //     context,
               //     MaterialPageRoute<void>(
               //         builder: (BuildContext context) => stateNav));
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.apartment),
+            title: const Text(
+              'Pusula',
+              style: TextStyle(fontSize: 24.0),
+            ),
+            onTap: () {
+              setState(() {
+                stateNav = Compass();
+              });
             },
           ),
           const Divider(
