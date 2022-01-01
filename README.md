@@ -1,16 +1,16 @@
-# yapilacaklar_listesi
+# MyToolBox
 
-A new Flutter project.
+Toolbox project was developed with flutter for mobile programming course.
 
-## Getting Started
+## Tools And Features
+- Todo or Shopping Cart, you can create list, add item, delete item lists.
+- View and zoom with the hes codes gallery
+- Compass
+- Calculator
+- Sqflite and data model
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## User Interface
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![image](assets/animation.gif)   
