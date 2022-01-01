@@ -48,13 +48,11 @@ class _MyHomePageState extends State<MyHomePage> {
       imagesVisible = themeNotifier;
       return Scaffold(
           appBar: _buildAppBar(themeNotifier),
-          //body: GalleryPage(),
           body: stateNav,
           drawer: _buildDrawer(context));
     });
   }
 
-//navigator düzeni
   Drawer _buildDrawer(BuildContext context) {
     return Drawer(
       child: ListView(
@@ -131,7 +129,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  //butona göre ekranın temasını ayarlama kısmı appabardaki switch kontrolu
   AppBar _buildAppBar(ThemeModel themeNotifier) {
     return AppBar(
         backgroundColor: Colors.deepPurple,

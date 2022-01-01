@@ -13,4 +13,7 @@ Toolbox project was developed with flutter for mobile programming course.
 
 ## User Interface
 
-![image](assets/animation.gif)   
+![image](assets/animation.gif){:height="250px" width="250px"}.
+![image](assets/sc1.png){:height="100px" width="100px"}.
+
+
