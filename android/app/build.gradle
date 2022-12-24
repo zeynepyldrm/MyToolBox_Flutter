@@ -39,6 +39,11 @@ android {
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        configurations.all {
+        resolutionStrategy { force 'androidx.core:core:1.7.0-alpha01' }
+        resolutionStrategy { force 'androidx.window:window-java:1.0.0-alpha10' }
+        resolutionStrategy { force 'androidx.window:window:1.0.0-alpha10' }
+    }
     }
 
     buildTypes {
