@@ -10,7 +10,6 @@ Toolbox project was developed with flutter for mobile programming course.
 - Sqflite and data model
 - Theme of the app (dark or white) with toggle button
 
-- Deneme 2
 
 ## User Interface
 |  |  |

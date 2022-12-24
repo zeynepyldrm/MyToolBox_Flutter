@@ -32,9 +32,9 @@ class _CompassState extends State<Compass> {
 
       return Scaffold(
         appBar: AppBar(
-            title: const Text(
+            title: Text(
               'Pusula',
-              style: TextStyle(color: Colors.purple),
+              style: TextStyle(color: themeNotifier.isDark ? Colors.white : Colors.deepPurple),
             ),
             backgroundColor: bcColor),
         body: Container(

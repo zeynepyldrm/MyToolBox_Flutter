@@ -23,9 +23,10 @@ class GalleryPage extends StatelessWidget {
         appBar: AppBar(
             backgroundColor: bcColor,
             title: Text(
-              'Hes Kodları Galeri',
+              'Galeri',
               style: TextStyle(
-                color: Colors.deepPurple,
+                color: themeNotifier.isDark ? Colors.white : Colors.deepPurple,
+
               ),
             )),
         body: SafeArea(

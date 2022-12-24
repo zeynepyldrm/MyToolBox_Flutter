@@ -19,7 +19,7 @@ class NavigationAppBar extends StatelessWidget implements PreferredSizeWidget {
           debugShowCheckedModeBanner: false,
           title: '',
           theme: themeNotifier.isDark ? ThemeData.dark() : ThemeData.light(),
-          home: const MyHomePage(title: 'Kişisel Alet Çantam'),
+          home: const MyHomePage(title: 'BubbleApp'),
         );
       }),
     );
@@ -61,20 +61,20 @@ class _MyHomePageState extends State<MyHomePage> {
           const UserAccountsDrawerHeader(
             currentAccountPicture: CircleAvatar(
               backgroundImage: NetworkImage(
-                  'https://avatars.githubusercontent.com/u/26030027?v=4'), //resim alanaı -zeynep resmi
+                  'https://cutewallpaper.org/21/purple-bubble-background/Set-universal-colorful-bubble-in-vector-Soap-bubbles-on-purple.jpg'), //resim alanaı -zeynep resmi
             ),
-            accountEmail: Text('zeynep@example.com'),
+            accountEmail: Text(''),
             accountName: Text(
-              'Zeynep ',
+              'BubbleApp',
               style: TextStyle(fontSize: 23.0),
             ),
             decoration: BoxDecoration(color: Colors.deepPurple),
             // child: Text('Drawer Header'),
           ),
           ListTile(
-            leading: const Icon(Icons.house),
+            leading: const Icon(Icons.edit),
             title: const Text(
-              'Alışveriş Sepetlerim',
+              'Notlar',
               style: TextStyle(fontSize: 24.0),
             ),
             onTap: () {
@@ -85,9 +85,9 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           //hes kod
           ListTile(
-            leading: const Icon(Icons.house_outlined),
+            leading: const Icon(Icons.image),
             title: const Text(
-              'Hes Kodlarım',
+              'Galeri',
               style: TextStyle(fontSize: 24.0),
             ),
             onTap: () {
@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
             },
           ),
           ListTile(
-            leading: const Icon(Icons.apartment),
+            leading: const Icon(Icons.explore),
             title: const Text(
               'Pusula',
               style: TextStyle(fontSize: 24.0),
@@ -108,12 +108,9 @@ class _MyHomePageState extends State<MyHomePage> {
               });
             },
           ),
-          const Divider(
-            height: 10,
-            thickness: 1,
-          ),
+
           ListTile(
-            leading: const Icon(Icons.favorite),
+            leading: const Icon(Icons.calculate_outlined),
             title: const Text(
               'Hesap Makinesi',
               style: TextStyle(fontSize: 24.0),
@@ -122,6 +119,20 @@ class _MyHomePageState extends State<MyHomePage> {
               setState(() {
                 stateNav = CalculatorPage();
               });
+            },
+          ),
+          const Divider(
+            height: 10,
+            thickness: 1,
+          ),
+          ListTile(
+            leading: const Icon(Icons.settings),
+            title: const Text(
+              'Ayarlar',
+              style: TextStyle(fontSize: 24.0),
+            ),
+            onTap: () {
+              // Gerekli değişiklikler yapılır.
             },
           ),
         ],
@@ -136,7 +147,7 @@ class _MyHomePageState extends State<MyHomePage> {
         actions: [
           Switch(
               value: imagesVisible.isDark,
-              activeColor: Colors.yellowAccent,
+              activeColor: Colors.black,
               onChanged: (bool switchState) {
                 setState(() {
                   /*switchState

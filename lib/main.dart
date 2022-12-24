@@ -54,7 +54,10 @@ class _MyTodoAppState extends State<MyTodoApp> {
         appBar: AppBar(
           elevation: 0.0,
           backgroundColor: bcColor,
-          title: Text('Alışveriş Sepetim'),
+          title: Text('Notlar',
+          style: TextStyle(
+            color: themeNotifier.isDark ? Colors.white : Colors.deepPurple
+          )),
           actions: [
             Padding(
                 padding: EdgeInsets.all(8.0),
@@ -109,7 +112,7 @@ class _MyTodoAppState extends State<MyTodoApp> {
                                         Container(
                                           margin: EdgeInsets.only(right: 12.0),
                                           padding: EdgeInsets.all(12.0),
-                                          child: Text(day),
+                                          child: const Icon(Icons.check), // önceden içeride day alındığı için eklenen gün geliyordu
                                           decoration: BoxDecoration(
                                               color: Colors.deepPurple.shade100,
                                               borderRadius: BorderRadius.all(
@@ -122,7 +125,7 @@ class _MyTodoAppState extends State<MyTodoApp> {
                         }
                       }
                   }
-                  return Center(child: Text('Bugün sepetine ekleme yapmadın.'));
+                  return Center(child: Text('- Not Yok -'));
                 },
               ),
             ),
@@ -139,7 +142,10 @@ class _MyTodoAppState extends State<MyTodoApp> {
                       decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
-                          hintText: "Listene yeni ürün ekle"),
+                          hintStyle: TextStyle(
+                            color:  Colors.black
+                            ),
+                          hintText: "Not yaz ..."),
                       controller: inputController,
                     ),
                   ),
@@ -160,7 +166,7 @@ class _MyTodoAppState extends State<MyTodoApp> {
                           Task(task: newTaskTxt, dateTime: DateTime.now());
                       DBProvider.db.addNewTask(newTask);
                     },
-                    label: Text('Ürün Ekle',
+                    label: Text('Ekle',
                         style: TextStyle(color: Colors.white)),
                     style: TextButton.styleFrom(
                         shape: StadiumBorder(),

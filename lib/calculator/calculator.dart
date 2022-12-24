@@ -1,7 +1,10 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:yapilacaklar_listesi/theming/ThemeModel.dart';
 
 export 'package:yapilacaklar_listesi/calculator/calculator.dart';
+
 
 class CalculatorPage extends StatefulWidget {
   @override
@@ -133,87 +136,91 @@ class _CalculatorPageState extends State<CalculatorPage> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-        appBar: new AppBar(
-          title: new Text(
-            "Calculator",
-            style: TextStyle(color: Colors.deepPurple, fontSize: 20.0),
+    return Consumer(builder: (context, ThemeModel themeNotifier, child) {
+      Color bcColor = themeNotifier.isDark ? Colors.grey.shade800 : Colors
+          .white;
+      return Scaffold(
+          appBar: AppBar(
+            title: Text(
+              "Hesap Makinesi",
+              style: TextStyle(color: themeNotifier.isDark ? Colors.white : Colors.deepPurple),
+            ),
+            backgroundColor: bcColor,
           ),
-          backgroundColor: Colors.white,
-        ),
-        body: new Container(
-            child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          verticalDirection: VerticalDirection.down,
-          textBaseline: TextBaseline.alphabetic,
-          crossAxisAlignment: CrossAxisAlignment.baseline,
-          children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  " $firstNumber $oprator $secondNumber \t\t",
-                  style: TextStyle(color: Colors.black, fontSize: 30.0),
-                  textAlign: TextAlign.right,
-                )
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  " $io \t",
-                  style: TextStyle(color: Colors.black, fontSize: 50.0),
-                  textAlign: TextAlign.right,
-                )
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                _button("%", "operator"),
-                _button("^", "operator"),
-                _button("C", "operator"),
-                _button("AC", "output")
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                _button("7", "input"),
-                _button("8", "input"),
-                _button("9", "input"),
-                _button("/", "operator")
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                _button("4", "input"),
-                _button("5", "input"),
-                _button("6", "input"),
-                _button("X", "operator")
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                _button("1", "input"),
-                _button("2", "input"),
-                _button("3", "input"),
-                _button("+", "operator")
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                _button("=", "output"),
-                _button("0", "input"),
-                _button(".", "input"),
-                _button("-", "operator"),
-              ],
-            ),
-          ],
-        )));
+          body: Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                verticalDirection: VerticalDirection.down,
+                textBaseline: TextBaseline.alphabetic,
+                crossAxisAlignment: CrossAxisAlignment.baseline,
+                children: <Widget>[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        " $firstNumber $oprator $secondNumber \t\t",
+                        style: TextStyle(color: Colors.black, fontSize: 30.0),
+                        textAlign: TextAlign.right,
+                      )
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        " $io \t",
+                        style: TextStyle(color: Colors.black, fontSize: 50.0),
+                        textAlign: TextAlign.right,
+                      )
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      _button("%", "operator"),
+                      _button("^", "operator"),
+                      _button("C", "operator"),
+                      _button("AC", "output")
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      _button("7", "input"),
+                      _button("8", "input"),
+                      _button("9", "input"),
+                      _button("/", "operator")
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      _button("4", "input"),
+                      _button("5", "input"),
+                      _button("6", "input"),
+                      _button("X", "operator")
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      _button("1", "input"),
+                      _button("2", "input"),
+                      _button("3", "input"),
+                      _button("+", "operator")
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: <Widget>[
+                      _button("=", "output"),
+                      _button("0", "input"),
+                      _button(".", "input"),
+                      _button("-", "operator"),
+                    ],
+                  ),
+                ],
+              )));
+    });}
   }
-}
+
