@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:yapilacaklar_listesi/camera/camera.dart';
 import 'package:yapilacaklar_listesi/hes_gallery/galleryPage.dart';
 import 'package:yapilacaklar_listesi/main.dart';
 export 'package:yapilacaklar_listesi/navigation.dart';
@@ -115,12 +116,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ListTile(
             leading: const Icon(Icons.favorite),
             title: const Text(
-              'Hesap Makinesi',
+              'Kamera',
               style: TextStyle(fontSize: 24.0),
             ),
             onTap: () {
               setState(() {
-                stateNav = CalculatorPage();
+                stateNav = CameraScreen();
               });
             },
           ),
