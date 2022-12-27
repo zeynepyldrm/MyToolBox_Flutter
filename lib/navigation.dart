@@ -6,6 +6,7 @@ export 'package:yapilacaklar_listesi/navigation.dart';
 import 'package:yapilacaklar_listesi/theming/ThemeModel.dart';
 import 'package:yapilacaklar_listesi/compass/Compass.dart';
 import 'package:yapilacaklar_listesi/calculator/calculator.dart';
+import 'package:yapilacaklar_listesi/game/Game.dart';
 
 class NavigationAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -121,6 +122,19 @@ class _MyHomePageState extends State<MyHomePage> {
               });
             },
           ),
+
+          ListTile(
+            leading: const Icon(Icons.videogame_asset),
+            title: const Text(
+              'Oyun',
+              style: TextStyle(fontSize: 24.0),
+            ),
+            onTap: () {
+              setState(() {
+                stateNav = ColorGame();
+              });
+            },
+          ),
           const Divider(
             height: 10,
             thickness: 1,
@@ -132,7 +146,6 @@ class _MyHomePageState extends State<MyHomePage> {
               style: TextStyle(fontSize: 24.0),
             ),
             onTap: () {
-              // Gerekli değişiklikler yapılır.
             },
           ),
         ],

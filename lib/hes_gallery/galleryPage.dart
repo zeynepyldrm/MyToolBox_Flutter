@@ -6,10 +6,18 @@ export 'package:yapilacaklar_listesi/hes_gallery/galleryPage.dart';
 import 'package:yapilacaklar_listesi/theming/ThemeModel.dart';
 
 List<Images> _images = [
-  Images(imagePath: 'assets/hes.png'),
-  Images(imagePath: 'assets/hes2.png'),
-  Images(imagePath: 'assets/hes3.png'),
-  Images(imagePath: 'assets/hes4.png'),
+  Images(imagePath: 'assets/cizgiler.png'),
+  Images(imagePath: 'assets/images.png'),
+  Images(imagePath: 'assets/baloon.png'),
+  Images(imagePath: 'assets/flash.png'),
+  Images(imagePath: 'assets/flower.png'),
+  Images(imagePath: 'assets/grape.png'),
+  Images(imagePath: 'assets/image2.png'),
+  Images(imagePath: 'assets/image3.png'),
+  Images(imagePath: 'assets/peoples.png'),
+  Images(imagePath: 'assets/sunset.png'),
+  Images(imagePath: 'assets/star.png'),
+  Images(imagePath: 'assets/moon.png'),
 ];
 
 class GalleryPage extends StatelessWidget {
