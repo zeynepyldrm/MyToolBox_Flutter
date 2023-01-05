@@ -7,6 +7,7 @@ import 'package:yapilacaklar_listesi/theming/ThemeModel.dart';
 import 'package:yapilacaklar_listesi/compass/Compass.dart';
 import 'package:yapilacaklar_listesi/calculator/calculator.dart';
 import 'package:yapilacaklar_listesi/game/Game.dart';
+import 'package:yapilacaklar_listesi/game/MainPage.dart';
 
 class NavigationAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -135,18 +136,22 @@ class _MyHomePageState extends State<MyHomePage> {
               });
             },
           ),
-          const Divider(
-            height: 10,
-            thickness: 1,
-          ),
           ListTile(
-            leading: const Icon(Icons.settings),
+            leading: const Icon(Icons.gamepad),
             title: const Text(
-              'Ayarlar',
+              'Tic Tac Toe',
               style: TextStyle(fontSize: 24.0),
             ),
             onTap: () {
+              setState(() {
+                stateNav = MainPage(title: "Tic Tac Toe");
+              });
             },
+          ),
+
+          const Divider(
+            height: 10,
+            thickness: 1,
           ),
         ],
       ),
