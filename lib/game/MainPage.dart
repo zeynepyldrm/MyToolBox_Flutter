@@ -108,9 +108,9 @@ class _MainPageState extends State<MainPage> {
       });
 
       if (isWinner(x, y)) {
-        showEndDialog('Player $newValue Won');
+        showEndDialog('$newValue - Oyuncusu Kazandı !');
       } else if (isEnd()) {
-        showEndDialog('Undecided Game');
+        showEndDialog('Berabere - Kazanan Yok');
       }
     }
   }
@@ -139,14 +139,18 @@ class _MainPageState extends State<MainPage> {
     barrierDismissible: false,
     builder: (context) => AlertDialog(
       title: Text(title),
-      content: Text('Press to Restart the Game'),
+      content: Text('Oyunu yeniden başlatmak için tıklayınız.'),
       actions: [
         ElevatedButton(
           onPressed: () {
             setEmptyFields();
             Navigator.of(context).pop();
           },
-          child: Text('Restart'),
+          child: Text('Yeniden'),
+          style: ElevatedButton.styleFrom(
+            primary: Colors.deepPurple
+          ),
+
         )
       ],
     ),

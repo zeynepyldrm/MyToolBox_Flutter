@@ -4,6 +4,7 @@ import './model/task_model.dart';
 import 'package:yapilacaklar_listesi/navigation.dart';
 import 'package:yapilacaklar_listesi/theming/ThemeModel.dart';
 import 'package:provider/provider.dart';
+import 'package:dcdg/dcdg.dart';
 
 void main() {
   runApp(MyApp());
