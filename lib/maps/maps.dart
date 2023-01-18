@@ -23,6 +23,7 @@ class _MapsState extends State<Maps> {
     target: LatLng(_originLatitude, _originLongitude),
     zoom: 15,
   );
+
   @override
   void initState() {
     // TODO: implement initState

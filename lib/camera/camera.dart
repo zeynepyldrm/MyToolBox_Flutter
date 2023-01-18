@@ -6,12 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:provider/provider.dart';
 import 'package:video_player/video_player.dart';
 import 'package:yapilacaklar_listesi/camera/preview_screen.dart';
 
-import '../main.dart';
-import '../theming/ThemeModel.dart';
 
 class CameraScreen extends StatefulWidget {
   @override

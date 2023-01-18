@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:yapilacaklar_listesi/camera/camera.dart';
 import 'package:yapilacaklar_listesi/hes_gallery/galleryPage.dart';
+import 'package:yapilacaklar_listesi/loader/screen/loading_screen.dart';
 import 'package:yapilacaklar_listesi/main.dart';
 import 'package:yapilacaklar_listesi/maps/maps.dart';
 export 'package:yapilacaklar_listesi/navigation.dart';
@@ -44,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   var imagesVisible;
 
   var cardContent = [];
-  Widget stateNav = MyTodoApp();
+  Widget stateNav = LoadingScreen();
   @override
   Widget build(BuildContext context) {
     return Consumer(builder: (context, ThemeModel themeNotifier, child) {
