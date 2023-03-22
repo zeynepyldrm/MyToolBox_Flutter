@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:yapilacaklar_listesi/camera/camera.dart';
 import 'package:yapilacaklar_listesi/hes_gallery/galleryPage.dart';
+import 'package:yapilacaklar_listesi/loader/screen/loading_screen.dart';
 import 'package:yapilacaklar_listesi/main.dart';
+import 'package:yapilacaklar_listesi/maps/maps.dart';
 export 'package:yapilacaklar_listesi/navigation.dart';
 import 'package:yapilacaklar_listesi/theming/ThemeModel.dart';
 import 'package:yapilacaklar_listesi/compass/Compass.dart';
 import 'package:yapilacaklar_listesi/calculator/calculator.dart';
+import 'package:yapilacaklar_listesi/translator/translation-page.dart';
 
 class NavigationAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
@@ -41,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   var imagesVisible;
 
   var cardContent = [];
-  Widget stateNav = MyTodoApp();
+  Widget stateNav = LoadingScreen();
   @override
   Widget build(BuildContext context) {
     return Consumer(builder: (context, ThemeModel themeNotifier, child) {
@@ -115,12 +119,36 @@ class _MyHomePageState extends State<MyHomePage> {
           ListTile(
             leading: const Icon(Icons.favorite),
             title: const Text(
-              'Hesap Makinesi',
+              'Kamera',
               style: TextStyle(fontSize: 24.0),
             ),
             onTap: () {
               setState(() {
-                stateNav = CalculatorPage();
+                stateNav = CameraScreen();
+              });
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.favorite),
+            title: const Text(
+              'Çeviri',
+              style: TextStyle(fontSize: 24.0),
+            ),
+            onTap: () {
+              setState(() {
+                stateNav = TranslatePage();
+              });
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.favorite),
+            title: const Text(
+              'Konum',
+              style: TextStyle(fontSize: 24.0),
+            ),
+            onTap: () {
+              setState(() {
+                stateNav = Maps();
               });
             },
           ),
